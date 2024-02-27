@@ -8,7 +8,7 @@ public class LiveApplication {
 
 	public static void main(String[] args) {
 		system.out.println("HEllo world!");
-		SpringApplication.run(LiveApplication.class, args);
+		SpringApplication.run(primarySource: LiveApplication.class, args);
 	}
 
 }
