@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class LiveApplication {
 
 	public static void main(String[] args) {
+		system.out.println("HEllo world!");
 		SpringApplication.run(LiveApplication.class, args);
 	}
 
