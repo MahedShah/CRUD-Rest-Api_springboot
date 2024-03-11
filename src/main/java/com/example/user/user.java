@@ -21,4 +21,23 @@ public class user {
     public long getId() {
         return id;
     }
-}
+    
+    public void setId(Long id){
+        this.id = id;
+    }
+
+    public long getName() {
+        return name;
+        }
+    
+    public String setName(String name){
+        this.name = name;
+    }
+    public String getEmail(){
+        return email;
+    } 
+    public void setEmail(String email){
+     this.email = email;
+    }
+    }
+
