@@ -20,13 +20,12 @@ public class UserController {
     private UserRepository userRepository;
 
     @GetMapping
-    public List<com.example.live.user.User> getAllUsers(){
+    public List<com.example.live.user.User> getAllUsers() {
         return userRepository.findAll();
     }
 
-   
     @GetMapping("/{id}")
-    public com.example.live.user.User getUserById(@PathVariable Long id){
+    public com.example.live.user.User getUserById(@PathVariable Long id) {
         return userRepository.findById(id).get();
     }
 
@@ -35,18 +34,19 @@ public class UserController {
         return userRepository.save(user);
     }
 
-    @PutMapping("/{id}") 
+    @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id, @RequestBody User user) {
         com.example.live.user.User existinguser = userRepository.findById(id).get();
         existinguser.setName(user.getName());
         existinguser.setEmail(user.getEmail());
         return userRepository.save(existinguser);
-    } 
+    }
 
     @SuppressWarnings("null")
     @DeleteMapping("/{id}")
     public String deleteUser(@PathVariable Long id) {
         try {
+            userRepository.findById(id).get();
             userRepository.deleteById(id);
             return "USer deleted Successfully";
         } catch (Exception e) {
